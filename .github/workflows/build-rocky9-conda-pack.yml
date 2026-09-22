@@ -33,6 +33,10 @@ jobs:
       # than Docker Library's stale `rockylinux` namespace. Pin the Rocky 9.5
       # multi-architecture manifest so the build environment cannot drift.
       image: rockylinux/rockylinux:9.5@sha256:149fd31d916038eb1084d0e051537e279d7afcd5de0b365254e8fa3c3ef12bad
+      # This image does not publish PATH in its container metadata. GitHub
+      # otherwise cannot resolve bash when it starts a bash-based step.
+      env:
+        PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
     steps:
       - name: Install container prerequisites
