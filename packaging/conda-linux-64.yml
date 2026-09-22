@@ -5,6 +5,7 @@ dependencies:
   - python=3.12
   - ca-certificates
   - openssl
+  - dbus
   - fontconfig
   - freetype
   - libegl
