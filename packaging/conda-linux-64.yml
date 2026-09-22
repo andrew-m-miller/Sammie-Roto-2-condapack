@@ -3,6 +3,9 @@ channels:
   - conda-forge
 dependencies:
   - python=3.12
+  # Keep conda's copy aligned with uv.lock so uv does not overwrite
+  # conda-managed files and make the environment un-packable.
+  - setuptools=81.0.0
   - ca-certificates
   - openssl
   - dbus
