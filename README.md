@@ -40,6 +40,9 @@ Everything is self-contained in the Sammie-Roto folder. If you want to remove th
 - Execute the following command in the terminal: `bash install.sh` then follow the prompt.
 - MacOS users: double-click the desktop icon to launch the program. Linux users: `bash run_sammie.sh` or find it in the applications menu.
 
+For a self-contained installation on an air-gapped Rocky Linux 9.5 x86_64
+computer, see [the offline conda-pack guide](docs/airgapped-rocky9.md).
+
 ### Updates
 **Full Changelog can be seen under [releases](https://github.com/Zarxrax/Sammie-Roto-2/releases)**
 - [09/05/2026] 2.4.1 - Premilinary support for AMD GPUs on Windows, some bugfixes.

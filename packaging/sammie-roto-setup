@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+bin_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+prefix="$(cd -- "$bin_dir/.." && pwd)"
+quiet=0
+[[ "${1:-}" == "--quiet" ]] && quiet=1
+
+if [[ ! -f "$prefix/.sammie-roto-unpacked" ]]; then
+    (( quiet )) || echo "Relocating the packed environment to $prefix ..."
+    "$prefix/bin/python" "$prefix/bin/conda-unpack"
+    : > "$prefix/.sammie-roto-unpacked"
+fi
+
+if (( ! quiet )); then
+    "$bin_dir/sammie-roto-check"
+    echo
+    echo "Setup complete. Start the application with:"
+    echo "  $bin_dir/sammie-roto"
+fi

@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+bin_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+prefix="$(cd -- "$bin_dir/.." && pwd)"
+
+if [[ ! -f "$prefix/.sammie-roto-unpacked" ]]; then
+    "$bin_dir/sammie-roto-setup" --quiet
+fi
+
+export PYTHONNOUSERSITE=1
+export PYTHONDONTWRITEBYTECODE=1
+export LD_LIBRARY_PATH="$prefix/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+cd "$prefix/share/sammie-roto-2"
+exec "$prefix/bin/python" launcher.py "$@"

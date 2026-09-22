@@ -1,0 +1,35 @@
+name: sammie-roto-2
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - ca-certificates
+  - openssl
+  - fontconfig
+  - freetype
+  - libegl
+  - libgl
+  - libglib
+  - libxcb
+  - libxkbcommon
+  - libxkbfile
+  - wayland
+  - xcb-util
+  - xcb-util-cursor
+  - xcb-util-image
+  - xcb-util-keysyms
+  - xcb-util-renderutil
+  - xcb-util-wm
+  - xorg-libice
+  - xorg-libsm
+  - xorg-libx11
+  - xorg-libxau
+  - xorg-libxcomposite
+  - xorg-libxcursor
+  - xorg-libxdamage
+  - xorg-libxdmcp
+  - xorg-libxext
+  - xorg-libxfixes
+  - xorg-libxi
+  - xorg-libxrandr
+  - xorg-libxrender

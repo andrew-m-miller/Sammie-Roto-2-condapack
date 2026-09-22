@@ -1,4 +1,5 @@
 # Sammie-Roto specific files and folders
+.DS_Store
 python-3.12.8-embed-amd64/
 temp/
 sammie_debug.log
@@ -14,6 +15,11 @@ checkpoints/minimax/vae/diffusion_pytorch_model.safetensors
 checkpoints/videomama/unet/diffusion_pytorch_model.safetensors
 checkpoints/videomama/vae/diffusion_pytorch_model.fp16.safetensors
 
+# Offline bundle/model build outputs. These may contain multi-gigabyte model
+# weights and are meant for transfer media, not the remote repository.
+dist/
+*.part
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
@@ -26,7 +32,6 @@ __pycache__/
 .Python
 build/
 develop-eggs/
-dist/
 downloads/
 eggs/
 .eggs/
