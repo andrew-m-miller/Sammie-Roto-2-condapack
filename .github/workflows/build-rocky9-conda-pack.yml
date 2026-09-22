@@ -29,7 +29,10 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 360
     container:
-      image: rockylinux:9.5
+      # Rocky's current images live in the Foundation-owned repository rather
+      # than Docker Library's stale `rockylinux` namespace. Pin the Rocky 9.5
+      # multi-architecture manifest so the build environment cannot drift.
+      image: rockylinux/rockylinux:9.5@sha256:149fd31d916038eb1084d0e051537e279d7afcd5de0b365254e8fa3c3ef12bad
 
     steps:
       - name: Install container prerequisites
