@@ -36,7 +36,7 @@ jobs:
 
     steps:
       - name: Install container prerequisites
-        run: dnf install -y bzip2 findutils git gzip tar xz
+        run: dnf install -y bash bzip2 findutils git gzip tar xz
 
       - name: Check out repository
         uses: actions/checkout@v5
