@@ -78,7 +78,7 @@ cd "$repo_root"
     echo "Run this script from the Sammie-Roto 2 repository." >&2
     exit 1
 }
-git_revision="$(git -C "$repo_root" rev-parse --verify HEAD)" || {
+git_revision="$(git -c safe.directory="$repo_root" -C "$repo_root" rev-parse --verify HEAD)" || {
     echo "The repository must have a valid HEAD commit." >&2
     exit 1
 }
@@ -111,7 +111,7 @@ source_snapshot="$build_root/source"
 
 echo "Creating a tracked source snapshot from $git_revision..."
 mkdir -p "$source_snapshot"
-git -C "$repo_root" archive --format=tar "$git_revision" | \
+git -c safe.directory="$repo_root" -C "$repo_root" archive --format=tar "$git_revision" | \
     tar -xf - -C "$source_snapshot"
 required_snapshot_files=(
     pyproject.toml
